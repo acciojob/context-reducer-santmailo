@@ -21,7 +21,7 @@ const App = () => {
       }`}</h1>
       <button
         onClick={() => {
-          setName("rohan");
+          setName("Ted");
           setAuthenticated(true);
         }}
         id="login-btn"
