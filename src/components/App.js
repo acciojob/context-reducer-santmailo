@@ -75,7 +75,7 @@ const App = () => {
 
       <ul>
         <li id={"item-mango"}>
-          {item.item + "  "}
+          mango
           <button id={"remove-mango"}> X</button>
         </li>
         {list.map((item) => {
