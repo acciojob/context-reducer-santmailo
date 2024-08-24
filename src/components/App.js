@@ -42,6 +42,7 @@ const App = () => {
       <input
         type="text"
         id="shopping-input"
+        value={userInput}
         onChange={(e) => {
           setUserInput(e.target.value);
         }}
@@ -57,6 +58,7 @@ const App = () => {
               removeItem: `remove-${userInput}`,
             },
           ]);
+          setUserInput("");
         }}
       >
         Add Task
@@ -64,6 +66,7 @@ const App = () => {
       <button
         onClick={() => {
           setList([]);
+          setUserInput("");
         }}
         id="clear-list"
       >
@@ -74,18 +77,13 @@ const App = () => {
       <br />
 
       <ul>
-        <li id={"item-mango"}>
-          mango
-          <button id={"remove-mango"}> X</button>
-        </li>
         {list.map((item) => {
           return (
-            <li id={item.idItem}>
-              {item.item + "  "}
+            <li id={item.idItem} key={item.idItem}>
+              {item.item}
               <button
                 id={item.removeItem}
                 onClick={() => {
-                  console.log(list);
                   const newArr = list.filter((fItem) => {
                     return item.idItem != fItem.idItem;
                   });
