@@ -74,6 +74,22 @@ const App = () => {
       <br />
 
       <ul>
+        <li id={"item-mango"}>
+          {item.item + "  "}
+          <button
+            id={item.removeItem}
+            onClick={() => {
+              console.log(list);
+              const newArr = list.filter((fItem) => {
+                return item.idItem != fItem.idItem;
+              });
+              setList(newArr);
+            }}
+          >
+            {" "}
+            X
+          </button>
+        </li>
         {list.map((item) => {
           return (
             <li id={item.idItem}>
