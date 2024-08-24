@@ -78,7 +78,7 @@ const App = () => {
       {list.map((item) => {
         return (
           <div style={{ display: "flex", gap: "20px" }} key={item.idItem}>
-            <p id={item.idItem}>{item.item}</p>
+            <p id={item.idItem}>{`#item-${item.item}`}</p>
             <button
               id={item.removeItem}
               onClick={() => {
