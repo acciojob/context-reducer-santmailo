@@ -76,19 +76,7 @@ const App = () => {
       <ul>
         <li id={"item-mango"}>
           {item.item + "  "}
-          <button
-            id={item.removeItem}
-            onClick={() => {
-              console.log(list);
-              const newArr = list.filter((fItem) => {
-                return item.idItem != fItem.idItem;
-              });
-              setList(newArr);
-            }}
-          >
-            {" "}
-            X
-          </button>
+          <button id={"remove-mango"}> X</button>
         </li>
         {list.map((item) => {
           return (
