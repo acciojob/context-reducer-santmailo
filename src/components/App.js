@@ -75,27 +75,25 @@ const App = () => {
 
       <br />
       <br />
+
       <ul className="list-ul">
-        <li id="#item-mango">mango</li>
-        <#item-mango>mango</#item-mango>
+        {" "}
         {list.map((item) => {
-          console.log(item);
           return (
-            <li
-              id={item.idItem}
-              key={Math.random() * 100 + 1 + list.length}
-            >{`${item.item}`}</li>
-            // <button
-            //   id={item.removeItem}
-            //   onClick={() => {
-            //     const newArr = list.filter((fItem) => {
-            //       return item.idItem != fItem.idItem;
-            //     });
-            //     setList(newArr);
-            //   }}
-            // >
-            //   X
-            // </button>
+            <li id={item.idItem} key={item.idItem}>
+              {`${item.item}`}
+              <button
+                id={item.removeItem}
+                onClick={() => {
+                  const newArr = list.filter((fItem) => {
+                    return item.idItem != fItem.idItem;
+                  });
+                  setList(newArr);
+                }}
+              >
+                X
+              </button>
+            </li>
           );
         })}
       </ul>
