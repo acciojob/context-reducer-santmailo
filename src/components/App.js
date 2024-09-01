@@ -80,7 +80,7 @@ const App = () => {
         {" "}
         {list.map((item) => {
           return (
-            <li id={item.idItem} key={item.idItem}>
+            <li id={item.idItem} key={`#${item.idItem}`}>
               {`${item.item}`}
               <button
                 id={item.removeItem}
