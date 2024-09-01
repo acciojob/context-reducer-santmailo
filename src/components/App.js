@@ -54,8 +54,8 @@ const App = () => {
             ...list,
             {
               item: userInput,
-              idItem: `item-${userInput}`,
-              removeItem: `remove-${userInput}`,
+              idItem: `#item-${userInput}`,
+              removeItem: `#remove-${userInput}`,
             },
           ]);
           setUserInput("");
@@ -80,8 +80,8 @@ const App = () => {
         {" "}
         {list.map((item) => {
           return (
-            <li id={item.idItem} key={`#${item.idItem}`}>
-              {`${item.item}`}
+            <li id={item.idItem} key={item.idItem}>
+              {item.idItem}
               <button
                 id={item.removeItem}
                 onClick={() => {
