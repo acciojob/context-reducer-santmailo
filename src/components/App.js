@@ -76,6 +76,7 @@ const App = () => {
       <br />
       <br />
       <ul className="list-ul">
+        <li id="#item-mango">mango</li>
         {list.map((item) => {
           console.log(item);
           return (
