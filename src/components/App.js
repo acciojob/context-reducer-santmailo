@@ -75,24 +75,26 @@ const App = () => {
 
       <br />
       <br />
-      {list.map((item) => {
-        return (
-          <div style={{ display: "flex", gap: "20px" }} key={item.idItem}>
-            <p id={item.idItem}>{`#item-${item.item}`}</p>
-            <button
-              id={item.removeItem}
-              onClick={() => {
-                const newArr = list.filter((fItem) => {
-                  return item.idItem != fItem.idItem;
-                });
-                setList(newArr);
-              }}
-            >
-              X
-            </button>
-          </div>
-        );
-      })}
+      <ul>
+        {list.map((item) => {
+          return (
+            <div style={{ display: "flex", gap: "20px" }} key={item.idItem}>
+              <li id={item.idItem}>{`#item-${item.item}`}</li>
+              <button
+                id={item.removeItem}
+                onClick={() => {
+                  const newArr = list.filter((fItem) => {
+                    return item.idItem != fItem.idItem;
+                  });
+                  setList(newArr);
+                }}
+              >
+                X
+              </button>
+            </div>
+          );
+        })}
+      </ul>
     </div>
   );
 };
