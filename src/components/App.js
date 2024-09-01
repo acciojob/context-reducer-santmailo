@@ -75,11 +75,15 @@ const App = () => {
 
       <br />
       <br />
-      <ul>
+      <ul className="list-ul">
+        <li>hello</li>
         {list.map((item) => {
           return (
-            <div style={{ display: "flex", gap: "20px" }} key={item.idItem}>
-              <li id={item.idItem}>{`#item-${item.item}`}</li>
+            <div
+              style={{ display: "flex", gap: "20px" }}
+              key={item.idItem + list.length + Math.random() * 10 + 1}
+            >
+              <li id={item.idItem}>{`${item.item}`}</li>
               <button
                 id={item.removeItem}
                 onClick={() => {
